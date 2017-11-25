@@ -7,25 +7,37 @@ public class Controlador {
     public Controlador() {
     }
 
-    public float calcularLucro(){
-        return 0;
+    public float calcularLucro(float custoFixoTotal, float custoVariavelTotal, int estimativaVenda){
+
+        float custoTotal = custoFixoTotal + (custoVariavelTotal * estimativaVenda);
+        float receita = (custoVariavelTotal * estimativaVenda)  * estimativaVenda;
+        float lucro = receita - custoTotal;
         
-             
-        //Custo Total = cf + (cvu*q)
-        //Receita = (P * Q);
-        //Preço = Somatorio(cvu*qt)
-        //Lucro = Receita - Custo Total
-        
+        return lucro;
     }
     
     public float calcularCustosVariaveis(ArrayList<Float> custosVariaveis, ArrayList<Integer> custosMateriaPrima){
-        return 0;
         
+        float somatorio = 0;
+        
+        for(int i = 0; i < custosVariaveis.size(); i++){ 
+            somatorio = somatorio + (custosVariaveis.get(i) * custosMateriaPrima.get(i));       
+        }  
+        return somatorio;   
     }
     
     public float calcularCustosFixos(ArrayList<Float> custosFixos){
-        return 0;
         
+        float somatorio = 0;
+        
+        for(int i = 0; i < custosFixos.size(); i++){    
+            somatorio = somatorio + custosFixos.get(i);    
+        }
+        return somatorio; 
     }
     
+    public float calcularPreco(float custoVariavelTotal, float margemContribuicao){
+        float preco = custoVariavelTotal + ((custoVariavelTotal / 100) * margemContribuicao);
+        return preco;
+    }
 }
