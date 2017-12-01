@@ -20,8 +20,8 @@ public class Controlador {
         
         float somatorio = 0;
         
-        for(int i = 0; i < custosVariaveis.size(); i++){ 
-            somatorio = somatorio + (custosVariaveis.get(i) * custosMateriaPrima.get(i));       
+        for(int i = 0; i < custosVariaveis.size(); i++){
+            somatorio += (custosVariaveis.get(i) * custosMateriaPrima.get(i));       
         }  
         return somatorio;   
     }
@@ -37,7 +37,11 @@ public class Controlador {
     }
     
     public float calcularPreco(float custoVariavelTotal, float margemContribuicao){
-        float preco = custoVariavelTotal + ((custoVariavelTotal / 100) * margemContribuicao);
+        float preco = custoVariavelTotal + (custoVariavelTotal * (margemContribuicao/100));
         return preco;
+    }
+    
+    public float calcularPontoEquilibrio(float custoFixoTotal, float custoVariavelUn, float preco) {
+        return custoFixoTotal / (preco - custoVariavelUn);
     }
 }
