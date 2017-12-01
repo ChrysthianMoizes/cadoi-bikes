@@ -589,7 +589,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
         float margemContribuicao = Float.parseFloat(jTextFieldMargemContribuicao.getText());
         
         float preco = ctrl.calcularPreco(custoVariavelTotal, margemContribuicao);
-        float lucro = ctrl.calcularLucro(custoFixoTotal, custoVariavelTotal, estimativaVenda);
+        float lucro = ctrl.calcularLucro(custoFixoTotal, custoVariavelTotal, estimativaVenda, preco);
         
         jTextFieldPreco.setText(String.valueOf(preco));
         jTextFieldLucro.setText(String.valueOf(lucro));

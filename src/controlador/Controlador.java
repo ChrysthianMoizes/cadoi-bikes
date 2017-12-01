@@ -7,10 +7,10 @@ public class Controlador {
     public Controlador() {
     }
 
-    public float calcularLucro(float custoFixoTotal, float custoVariavelTotal, int estimativaVenda){
+    public float calcularLucro(float custoFixoTotal, float custoVariavelTotal, int estimativaVenda, float precoVenda){
 
         float custoTotal = custoFixoTotal + (custoVariavelTotal * estimativaVenda);
-        float receita = (custoVariavelTotal * estimativaVenda)  * estimativaVenda;
+        float receita = precoVenda * estimativaVenda;
         float lucro = receita - custoTotal;
         
         return lucro;
