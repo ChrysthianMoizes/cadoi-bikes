@@ -32,7 +32,6 @@ public class PrincipalFrame extends javax.swing.JFrame {
         jTextFieldQtdEquilibrio = new javax.swing.JFormattedTextField();
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
@@ -169,10 +168,6 @@ public class PrincipalFrame extends javax.swing.JFrame {
         jLabel40.setForeground(new java.awt.Color(0, 0, 255));
         jLabel40.setText("Qtd Equilíbrio:");
 
-        jLabel41.setFont(new java.awt.Font("Segoe UI Symbol", 1, 24)); // NOI18N
-        jLabel41.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel41.setText("R$");
-
         jLabel43.setFont(new java.awt.Font("Segoe UI Symbol", 1, 24)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(0, 0, 255));
         jLabel43.setText("R$");
@@ -202,8 +197,6 @@ public class PrincipalFrame extends javax.swing.JFrame {
                             .addGroup(jPanelVendasLayout.createSequentialGroup()
                                 .addComponent(jLabel29)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel41)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jSpinnerEstimativa, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelVendasLayout.createSequentialGroup()
                                 .addComponent(jLabel32)
@@ -247,8 +240,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
                     .addGroup(jPanelVendasLayout.createSequentialGroup()
                         .addGroup(jPanelVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel29)
-                            .addComponent(jSpinnerEstimativa, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jSpinnerEstimativa, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(24, 24, 24)
                         .addGroup(jPanelVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel32)
@@ -802,7 +794,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
         
         float preco = ctrl.calcularPreco(custoVariavelTotal, margemContribuicao);
         float lucro = ctrl.calcularLucro(custoFixoTotal, custoVariavelTotal, estimativaVenda, preco);
-        float qtdPontoEquilibrio = ctrl.calcularPontoEquilibrio(custoFixoTotal, custoVariavelTotal, preco);
+        int qtdPontoEquilibrio = ctrl.calcularPontoEquilibrio(custoFixoTotal, custoVariavelTotal, preco);
         
         jTextFieldPreco.setText(String.valueOf(preco));
         jTextFieldLucro.setText(String.valueOf(lucro));
@@ -945,7 +937,6 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;

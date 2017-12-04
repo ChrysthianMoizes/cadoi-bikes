@@ -41,7 +41,7 @@ public class Controlador {
         return preco;
     }
     
-    public float calcularPontoEquilibrio(float custoFixoTotal, float custoVariavelUn, float preco) {
-        return custoFixoTotal / (preco - custoVariavelUn);
+    public int calcularPontoEquilibrio(float custoFixoTotal, float custoVariavelUn, float preco) {
+        return ((int) (custoFixoTotal / (preco - custoVariavelUn))) + 1;
     }
 }
